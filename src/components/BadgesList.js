@@ -1,9 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Gravatar from './Gravatar';
 import './styles/BadgeList.css'
+
+
 
 class BadgesList extends React.Component {
 
     render() {
+        if(this.props.badges.length === 0) {
+            return(
+                <div>
+                    <h3>No badges were found</h3>
+                    <Link className="btn btn-primary" to="/badges/new">
+                        Create new page
+                    </Link>
+                </div>
+            )
+        }
         return (
         <div className="BadgeList__container">
         <ul className="list-unstyled">
@@ -12,8 +26,8 @@ class BadgesList extends React.Component {
           
                 
                 <li className="BadgeList__section-info" key={badge.id}>
-                    <picture>
-                        <img className="BadgeList__item-avatar" src={badge.avatarUrl} alt="Avatar"/>
+                    <picture className="Container__avatar">
+                        <Gravatar className="Badge__avatar" email={badge.email} alt="Avatar"/>
                     </picture>
                     <p className="BadgeList__item-info">
                         <span>{badge.firstName} {badge.lastName}</span> 

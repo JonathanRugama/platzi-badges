@@ -15,15 +15,15 @@ class BadgeForm extends React.Component {
         console.log("Button was clicked")
     }
 
-    handleSubmit = e => {
+    /* handleSubmit = e => {
         e.preventDefault();
         console.log('Form was submitted')
-    }
+    } */
     render(){
         return (
             <section>
                 <h1>New Attendant</h1>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.props.onSubmit}>
                     <div className="form-group">
                         <label htmlFor="">First Name</label>
                         <input 
