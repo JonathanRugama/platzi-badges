@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import PageLoading from '../components/PageLoading'
 import PageError from '../components/PageError'
 import api from '../api'
+import MiniLoader from '../components/MiniLoader'
 class Badges extends React.Component {
   
    
@@ -22,7 +23,8 @@ class Badges extends React.Component {
     }
     componentDidMount() {
         console.log('3. ComponentDidMount')
-        this.fetchData()
+        
+       setInterval(this.fetchData, 5000);
        
         
     }
@@ -53,7 +55,7 @@ class Badges extends React.Component {
     }
     render() {
         console.log('2.render')
-        if (this.state.loading ===true) {
+        if (this.state.loading ===true && !this.state.data) {
             return <PageLoading />;
         }
         if(this.state.error) {
@@ -82,7 +84,7 @@ class Badges extends React.Component {
                 <div className="Badges__list">
                     <div className="Badges__container">
                         <BadgesList badges={this.state.data} />
-                        
+                        {this.state.loading && <MiniLoader />}
                     </div>
                 </div>
             </div>

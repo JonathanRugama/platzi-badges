@@ -22,7 +22,7 @@ class BadgeForm extends React.Component {
     render(){
         return (
             <section>
-                <h1>New Attendant</h1>
+              
                 <form onSubmit={this.props.onSubmit}>
                     <div className="form-group">
                         <label htmlFor="">First Name</label>
@@ -75,7 +75,9 @@ class BadgeForm extends React.Component {
                     </div>
                     <button type="submit" onClick={this.handleClick} className="btn btn-primary">Save</button>
                 </form>
-                
+                {this.props.error && (
+                    <p className="text-danger">{this.props.error.message}</p>
+                )}
             </section>
         );
     }

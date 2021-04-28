@@ -10,7 +10,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
 border-radius: 0.5rem;
 align-items: center;
 }
-.BadgeList__section-info picture {
+.BadgeList__section-info a picture {
     width: 80px;
     height: 80px;
 }
@@ -24,17 +24,20 @@ align-items: center;
     flex-direction: column;
     margin-left: 1rem;
 }
-.BadgeList__item-info span:nth-child(1) {
+.BadgeList__item-info a span:nth-child(1) {
     font-weight: bold;
 }
-.BadgeList__item-info span:nth-child(2) {
+.BadgeList__item-info a span:nth-child(2) {
     display: flex;
     color: #19BFE5;
 }
-.BadgeList__item-info .icon__container {
+.BadgeList__item-info a .icon__container {
     width: 20px;
     height: 20px;
 }
 .icon__container img {
     width: 100%;
+}
+.text-reset {
+    text-decoration: none;
 }
